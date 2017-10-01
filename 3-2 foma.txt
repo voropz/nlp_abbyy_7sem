@@ -1,0 +1,6 @@
+define ruleS "+N" "+Sg" -> "$" || _ "#",,"+N" "+Pl" -> "$" "s" || _ "#";
+define ruleY "y" -> "ie" || [? - a - o - i - e] _ "$" "s" "#";
+define ruleSIB [...] -> "e" || [s | z | x | ch | sh] _ "$" "s" "#";
+define ruleCL "$" -> 0 || _;
+define except [{goose} "+N" "+Pl" "#" .x. {geese#}];
+regex except .P. ruleS .o. ruleY .o. ruleSIB .o. ruleCL;
